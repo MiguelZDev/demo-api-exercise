@@ -28,8 +28,8 @@ public class EmployeeController {
   private final EmployeeService service;
 
   @GetMapping
-  public ResponseEntity<List<EmployeeDto>> getAllByFilter(@RequestParam(required = false) String position,
-                                                          @RequestParam(required = false) String name) {
+  public ResponseEntity<List<EmployeeDto>> getAllByFilter(@RequestParam(required = false) String name,
+                                                          @RequestParam(required = false) String position) {
     return new ResponseEntity<>(service.filterBy(name, position), HttpStatus.OK);
   }
 
